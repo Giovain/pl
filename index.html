@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>立方体旋转</title>
+	<style>
+    .zm{
+          width:300px;
+          height:300px;
+          position:fixed;
+          left:0;right:0;
+          top:0;bottom:0;
+          margin:auto;
+          transform-style: preserve-3d;
+          transform:rotateX(20deg) rotateY(30deg);
+          transition:2s;
+          animation:zm 3s infinite;
+      }
+      .zm div{
+           width:300px;
+           height:300px;
+           text-align: center;
+           line-height:300px;
+           font-size: 100px;
+           font-weight:bolder;
+           color:#fff;
+           position:absolute;
+           left:0;top:0;
+           border:2px solid #000;
+
+          
+       }
+    .face1{
+            background:rgba(255,239,213,0.5);
+            transform:translateZ(150px);
+        }
+        .face2{
+            background:rgba(84,255,159,0.5);
+            transform:translateZ(-150px) rotateY(180deg); 
+        }
+        .face3{
+            background:rgba(0,0,205,0.5);
+            transform:translateY(-150px) rotateX(90deg);
+        }
+        .face4{
+            background:rgba(139,101,8,0.5);
+            transform:translateY(150px) rotateX(-90deg);
+        }
+
+        .face5{
+            background:rgba(255,255,255,0.5);
+            transform:translateX(-150px) rotateY(-90deg);
+        }
+        .face6{
+            background:rgba(205,92,92,0.5);
+            transform:translateX(150px) rotateY(90deg);
+        }
+        @keyframes zm{
+            0%{
+                transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+            }
+             50%{
+                transform: rotateY(180deg) rotateX(180deg) rotateZ(180deg);
+            }
+            100%{
+                transform:  rotateX(360deg) rotateZ(360deg);
+            }
+        }
+ 
+	</style>
+</head>
+<body>
+	 <div class="zm">
+        <div class="face1">1</div>
+        <div class="face2">2</div>
+        <div class="face3">3</div>
+        <div class="face4">4</div>
+        <div class="face5">5</div>
+        <div class="face6">6</div>
+    </div>
+</body>
+</html>
